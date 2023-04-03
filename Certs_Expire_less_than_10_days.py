@@ -35,8 +35,8 @@ def check_certificate_expiry_less_than_10_days(Hostname):
 
 def filter_hosts_that_expire_less_than_10_days():
 
-    host_file = "./python-git/hostnames.txt"
-    filter_results = "./python-git/filtered_hosts.txt"
+    host_file = "./ssl-cert-renewal-repo/hostnames.txt"
+    filter_results = "./ssl-cert-renewal-repo/filtered_hosts.txt"
     with open(host_file,"r") as hostlist, open(filter_results,"w") as filtered:
         for host in hostlist:
             status = check_certificate_expiry_less_than_10_days(host.rstrip("\n"))
